@@ -1,0 +1,64 @@
+<!-- Bai14: Truy xuất thẻ HTMl bằng js -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truy xuất thẻ</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #button{
+            background: blue;
+            color: white;
+            /* border: solid 1px blue ; */
+            display: inline-block;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="content">CONTENT 1</div>
+    </div>
+    <div class="content">CONTENT 2</div>
+    <div id="content3">CONTENT 3</div>
+    <div id="content4">CONTENT 4</div>
+    <br>
+    <input type="button" value="Đăng Nhập" id="button" onclick="do_something()"/>
+
+    <script>
+
+        function do_something()
+        {
+
+            // var content = document.getElementById('content').innerHTML;
+
+            // var div_content = document.getElementsByClassName('content');
+
+            // var div_content1 = document.getElementsByTagName('div');
+
+            // truy cập thẻ lồng thẻ dùng querySelectorAll('NameTheNgoai#nameID NameTheTrong.Nameclass')
+            var obj = document.querySelectorAll('div#wrapper div.content')
+
+            console.log(obj);
+
+            // alert(content);
+        }
+
+    </script>
+
+ 
+
+
+</body>
+
+</html>

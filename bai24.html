@@ -1,0 +1,172 @@
+<!-- Validate Form bằng js -->
+
+<!-- 
+    1. Username không được trống, tối thiểu có 5 ký tự, không chứa ký tự đặc biệt
+    2. Mật khẩu không được trống, tối thiểu 8 ký tự
+    3. Mật khẩu nhập lại phải trùng
+    4. Phone phải là những con số có 10 ký tự
+    5. Email phải đúng định dạng
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký</title>
+
+    <style>
+        span {
+            color: red;
+            display: block;
+            line-height: 10px;
+            padding: 10px 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="" method="post" id="loginform">
+        <table border="1" cellspacing="0" cellpadding="10" align="center">
+            <tr>
+                <td>Tên đăng nhập:</td>
+                <td>
+                    <input type="text" id="username" name="" size="30" value="">
+                    <span id="username_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu:</td>
+                <td>
+                    <input type="text" id="password" name="" size="30" value="">
+                    <span id="password_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập lại mật khẩu:</td>
+                <td>
+                    <input type="text" id="repassword" name="" size="30" value="">
+                    <span id="repassword_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>
+                    <input type="text" id="phone" name="" size="30" value="">
+                    <span id="phone_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="text" id="email" name="" size="30" value="">
+                    <span id="email_error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" id="btn" name="btn" value="Đăng ký" onclick="return validate();">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+    <script>
+
+        function getValue(id) {
+            return document.getElementById(id).value.trim();
+            // .trim() trả về phần tử đã trừ dấu space
+        }
+
+        function showError(key, mess) {
+            document.getElementById(key + '_error').innerHTML = mess;
+        }
+
+        function validate() {
+            var flag = true;
+
+            // 1. Username
+            // var username = getValue('username');
+            // if (username == '' || username.length < 5 || !/^[a-zA-Z0-9]+$/.test(username) ){
+            //     flag = false;
+            //     showError('username', 'Vui lòng kiểm tra lại Username');
+            //     console.log('username sai');
+            // }
+
+            // 1. Username
+            var username = getValue('username');
+            if (username == '') {
+                flag = false;
+                showError('username', 'Bạn chưa đăng nhập Username');
+            } else if (username.length < 5) {
+                flag = false;
+                showError('username', 'Username phải lớn hơn 5 ký tự');
+            } else if (!/^[a-zA-Z0-9]+$/.test(username)) {
+                flag = false;
+                showError('username', 'Tên đăng nhập không đúng định dạng');
+            } else {
+                showError('username', "");
+            }
+            // 2. Password
+            // var password = getValue('password');
+            // var password = getValue('repassword');
+            // if (password == '' || password.length < 8 || password != repassword){
+            //     flag = false;
+            //     showError('password', 'Bạn chưa đăng nhập password');
+            // }
+            var password = getValue('password');
+            if (password == '') {
+                flag = false;
+                showError('password', 'Bạn chưa đăng nhập password');
+            } else if (password.length < 8) {
+                flag = false;
+                showError('password', 'password phải lớn hơn 8 ký tự');
+            } else {
+                showError('password', '');
+            }
+
+            var repassword = getValue('repassword');
+            if (password != repassword) {
+                flag = false;
+                showError('repassword', 'repassword chưa đúng');
+            } else {
+                showError('repassword', '');
+            }
+
+            // 3. phone
+            var phone = getValue('phone');
+            if (phone != '' && !/^[0-9]{10}&/.test(phone)) {
+                flag = false;
+                showError('phone', 'Phone chưa đúng định dạng');
+                // console.log('phone sai');
+            } else {
+                // flag = true;
+                showError("phone", "");
+            }
+
+            // 4. email
+            var mail = getValue('email');
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (mail != '' && !mailformat.test(mail)) {
+                flag = false;
+                showError('email', 'Email chưa đúng định dạng');
+                // console.log('email sai');
+            } else {
+                // flag = true;
+                showError("email", "");
+            }
+
+            return flag;
+        }
+
+    </script>
+
+</body>
+
+</html>

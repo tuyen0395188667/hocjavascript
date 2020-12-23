@@ -1,0 +1,39 @@
+<!-- Bài 6: Vòng lặp For -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6: Vòng lặp for</title>
+    <script src="javascript6.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        var i , j;
+
+        for (i = 0; (i <= 9); i++){
+            for (j = 0; (j <= 9); j++){
+                // document.write(i);
+
+                // In ra vị trí của ma trận [i][j]
+                document.write("(["+i+"]["+j+"])");
+            }
+            // Xuống hàng
+            document.write('<br/>');
+         }
+      
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Lặp cho trường hợp biết trước Tổng số lần lặp -->
+<!-- Khi chạy vô tận trang web sẽ bị lỗi -->
+<!-- Vòng lặp lồng nhau: for = 1 sau khi sử dụng for(j) => Hiển thị 5 lần sau đó xuống dòng hiển thị 2 5 lần ... -->

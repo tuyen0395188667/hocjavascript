@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css"> 
+        <script src="Login.js"></script> 
+
+    </head>
+
+    <body>
+
+        <div class="loginbox">
+
+            <img src="imgages/avatar.png" class="avatar"> 
+            <h1>Login Here</h1>
+            <form>
+
+                <div class="form-group">              
+                    <!-- <p>Username</p> -->
+                    <label for="username">Username</label>
+                    <input type="text" name="" placeholder="Enter Username" id="username" value="">
+                    <span id="username_error"></span>
+                </div>
+
+                <div class="form-group">
+                    <!-- <p>Password</p> -->
+                    <label for="password">Password</label>
+                    <input type="password" name="" placeholder="Enter Password" id="password" value="">
+                    <span id="password_error"></span>
+                </div>
+               
+    
+                <input type="submit" name="btn" value="Login" id="btn" onclick="return validate();">
+                
+                <a href="#">Lost your password?</a><br>
+                <a href="Register.html" target="_blank">Don't have an account?</a>
+
+            </form>
+
+        </div>
+
+        <!-- <script>
+
+            // /^[a-zA-Z0-9]+$/.test(username) Ký tự bị so sánh bắt buộc có ít nhất 1 ký tự
+            // Hàm lấy giá trị nhập vào từ người dùng 
+            function getValue(id){
+                return document.getElementById(id).value.trim();
+            }
+            function showError(key, mess){
+                document.getElementById(key + "_error").innerHTML = mess;
+            }
+            // Hàm xuất thông báo cảnh báo cho người dùng
+            function validate(){
+                flag = true;
+
+                var username = getValue("username");
+                var password = getValue("password");
+                var reusername = "Tuyen";
+                var repassword = "0344014411";
+
+                if (username == ""){
+                    flag = false;
+                    showError("username", "Username not Logged in.");
+                }   
+                else if (username.length < 4)
+                {
+                    flag = false;
+                    showError("username", "Username must be greater than five.");
+                    }   
+                        else if (!/^[a-zA-Z0-9]+$/img.test(username))
+                        {
+                        flag = false;
+                        showError("username", "Username entered is incorrect.");
+                        }   
+                            else if (username != reusername)
+                            {
+                                flag = false;
+                                showError("username", "Username entered is error.");
+                            }   
+                                else if (password == "")
+                                {
+                                    showError("username", "");
+                                    flag = false;
+                                    showError("password", "Password not Logged in.");       
+                                }   
+                                    else if (password.length < 8)
+                                    {
+                                        flag = false;
+                                        showError("password", "Password entered is incorrect.");
+                                    }   
+                                        else if (password != repassword)
+                                        {
+                                            flag = false;
+                                            showError("password", "Password entered is error.");
+                                        }   else 
+                                            {
+                                                flag = true;
+                                                showError("password", "");
+                                                document.getElementById("username_error").innerHTML = "";
+                                                alert("Bạn đã đăng nhập thành công!");
+                                            }
+                return flag;
+            }
+
+        </script> -->
+
+
+    </body>
+
+    </html>

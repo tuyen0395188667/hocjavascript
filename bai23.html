@@ -1,0 +1,41 @@
+<!-- Bài 23: Protopyte -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protopyte</title>
+</head>
+
+<body>
+
+    <script>
+        
+        function User (){
+                usrname : '';
+                password : '';
+                return this;
+            };
+
+        // 2 Phương thức truyền vào
+        User.prototype.setInfor = function(usrname, password){
+            this.usrname = usrname;
+            this.password = password;
+        };
+
+        User.prototype.showtInfor = function(){
+            console.log(this.usrname);
+            console.log(this.password);
+        };
+
+        var us = new User();
+        us.setInfor("Tuyen", "123");
+        us.showtInfor();
+    </script>
+
+</body>
+
+</html>

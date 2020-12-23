@@ -1,0 +1,117 @@
+<!-- Bài 16: Đối tượng This -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đối tượng This</title>
+</head>
+
+<body>
+
+    <!-- Cách 1 -->
+    <div id="menu">
+        <ul>
+            <li>Nọi dung 1</li>
+            <li>Nọi dung 2</li>
+            <li>Nọi dung 3</li>
+            <li>Nọi dung 4</li>
+            <li>Nọi dung 5</li>
+            <li>Nọi dung 6</li>
+            <li>Nọi dung 7</li>
+            <li>Nọi dung 8</li>
+            <li>Nọi dung 9</li>
+        </ul>
+        </div>
+    
+    <script>
+        var liObj = document.getElementsByTagName('li');
+        for (var i = 0; i < liObj.length; i++ ){
+
+            liObj[i].style.height = '40px';
+            liObj[i].addEventListener('click', function(){
+
+                // This đại diện cho Object đang sảy ra sự kiện
+                console.log(this.innerHTML);
+
+            });
+
+        }
+
+    </script>
+
+    <!-- Cách 2 -->
+    <input type="button" name="" id="clickme" value="Click me"/>
+
+    <script>
+
+        var obj = {
+            name : "Tuyen",
+            getName : function(){
+                // This ở đây chính là obj(đối tượng đang xảy ra sự kiện)
+                console.log(this.name);
+
+                document.getElementById('clickme').addEventListener('click',function(){
+                    // This ở đây là đối tượng đang xảy ra sự kiện
+                    console.log(this.value);
+
+                });
+            }
+        };
+
+        obj.getName();
+        
+    </script>
+
+    <!-- Cách 3 -->
+    <input type="button" name="" id="clickme" value="Ban dang kich vào tôi" onclick="showContent(this)">
+
+    <script>
+        // currenObj = this (Chính thẻ input)
+        function showContent(currenObj){
+            console.log(currenObj.value);
+        }
+
+    </script>
+
+
+
+
+
+
+
+    <!-- <style>
+
+        /*==Reset CSS==*/
+            * {
+            margin: 0;
+            padding: 0;
+            }
+            
+            /*==Style cơ bản cho website==*/
+            body {
+            font-family: sans-serif;
+            color: #333;
+            }
+
+            /*==Style cho menu===*/
+            #menu ul {
+            background: #1F568B;
+            list-style-type: none;
+            text-align: center;
+            }
+            #menu li {
+            color: #f1f1f1;
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: -5px;
+            }
+
+    </style> -->
+</body>
+
+</html>

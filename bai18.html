@@ -1,0 +1,44 @@
+<!-- Bài 18: Xử lý radio -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử lý radio</title>
+</head>
+
+<body>
+    <!-- Thiết lập chechted -->
+    <input type="radio" value="Nam" id="nam" name="gender" /> Nam <br>
+    <input type="radio" value="Nữ" id="nu" name="gender" /> Nữ <br>
+
+    <input type="button" onclick="changeStatus('Nam')" name="clickme" value="Nam">
+    <input type="button" onclick="changeStatus('Nữ')" name="clickme" value="Nữ">
+
+    <script>
+        function changeStatus(value){
+            if (value == 'Nam'){
+                document.getElementById('nam').checked = true;
+            }
+            else {
+                document.getElementById('nu').checked = true;
+            }
+        }
+
+    // onload: Trang HTML load xong rồi mới xét
+        window.onload = function(){
+            var gender = document.getElementsByName('gender');
+            for (var i = 0; i < gender.length; i++){
+                gender[i].addEventListener('change', function(){
+                    var val = this.value;
+                    alert(val);
+
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- Bài 20: Regular Expression trong js -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular</title>
+</head>
+
+<body>
+
+    <script>
+        var string = "1";
+
+        var regex = /^\d+$/img;
+
+        if(regex.test(string)){
+            console.log("true");
+        }
+        else {
+            console.log("flase");
+        }
+    </script>
+
+</body>
+
+</html>
+<!-- Dùng biểu thức chính quy để so sánh -->
+
+<!--
+    ^ : Bắt đầu chuỗi
+    $ : Kết thúc chuỗi
+    /^[0-9]+$/ : Ký tự bị so sánh bắt buộc có ít nhất 1 ký tự
+    [0-9] = \d
+-->

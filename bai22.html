@@ -1,0 +1,83 @@
+<!-- Tìm hiêu Object trong js -->
+<!-- 
+    1. Function Object
+    2. object
+    3. Singleton Object
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <!-- 1. Function Object -->
+    <!-- 
+        <script>
+        function User()
+        {
+            this.usrname = '';
+            this.password = '';
+
+            // Phương thức
+            this.setInfo = function(usrname, password){
+                this.usrname = usrname;
+                this.password = password;
+            };
+
+            this.checkLogin = function(){
+                // === : So sánh có cùng loại hay không
+                return (this.usrname === 'admin' && this.password === '@123');
+            };
+
+            return this;
+        }
+
+        var user = new User();
+        user.setInfo('admin', 'abc');
+
+        if (user.checkLogin()){
+            console.log('Đã đăng nhập');
+        }
+        else {
+            console.log('CHưa đăng nhập');
+        }
+    </script> 
+-->
+
+    <!--Tạo  Object -->
+        <script>
+            // Tạo 1 Object mới
+            var user = {
+                usrname : "",
+                usrname : "",
+
+            // Phương thức
+                setInfo : function(usrname, password){
+                this.usrname = usrname;
+                this.password = password;
+            },
+
+                checkLogin = function(){
+                // === : So sánh có cùng loại hay không
+                return (this.usrname === 'admin' && this.password === '@123');
+            }
+            };
+            
+            var user = new User();
+            user.setInfo('admin', 'abc');
+                if (user.checkLogin()){
+                    console.log('Đã đăng nhập');
+                }
+                else {
+                    console.log('CHưa đăng nhập');
+                }
+        
+        </script>
+
+</body>
+
+</html>

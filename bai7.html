@@ -1,0 +1,71 @@
+<!-- Bài 7: Mảng trong js -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7: Mảng</title>
+    <script src="javascript7.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+    // // Mảng 1 chiều
+    // //Cách 1
+    //     //var students = new Array();
+
+    // //Cách 2
+    //     var students = [];
+    //     // Thêm phần tử Cách1
+    //         students[0] = 'Tuyen';
+    //         students[1] = 'Cuong';
+    //         students[2] = 'Huyen';
+    //         students[3] = 'Huyen';
+    //         students[4] = 'Huyen';
+    //         students[5] = 'Huyen';
+    //         students[6] = 'Huyen';
+    //         students[7] = 'Huyen';
+    //         students[8] = 'Test';
+    // // Cách thêm phần tử mảng students.push("tuyendepzai");
+
+    //     for (var i = 0; i < students.length; i++){
+    //         console.log(students[i]);
+    //     }
+
+    // Mảng 2 chiều
+        var students = [];
+
+        students[0,0] = 'Tuyen';
+        students[0,1] = 'Tuyen';
+        students[0,2] = 'Huyen';
+
+        students[1,0] = 'Tuyen1';
+        students[1,1] = 'Cuong1';
+        students[1,2] = 'Tuyen1';
+
+        students[2,0] = 'Tuyen22';
+        students[2,1] = 'Cuong2';
+        students[2,2] = 'Huyen2';
+
+        
+        for (var i = 0; i < students.length; i++){
+            for (var j = 0; j < students.length; j++){
+                // In ra vị trí của ma trận [i][j]
+                console.log(students[i,j]);
+            }
+         }
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Mảng tập hợp các phần tử khác nhau -->
+<!-- students.length: Chiều dài của mảng mảng 1 chiểu-->
+
+<!-- Mọi đối tượng trong js đều đc lưu dạng opject -->

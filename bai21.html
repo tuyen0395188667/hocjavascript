@@ -1,0 +1,107 @@
+<!-- Bài 21: Submit form trong js -->
+
+<!-- 
+    Xử lý form Submit trong js
+    1. Khai báo sự kiện Submit
+    2. Gọi đến hàm khi Submit
+    3. Dùng js để Submit
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit form</title>
+</head>
+
+<body style="margin: 100px;">
+
+<!-- 
+    <form action="" method="POST" id="myform" onsubmit="validate()">
+        <input type="text" id="name" value="">
+        <input type="submit" name="" id="" value="Submit">   
+    </form> 
+-->
+    <!-- 1. Khai báo sự kiện Submit -->
+<!-- 
+        <script>
+ 
+        function validate(){
+            // Lấy giá trị trong input có id Name để xét
+            var val = document.getElementById("name").value;
+
+            // Kỹ thuật đặt cờ hiệu/ Cho phép Submit Form
+            var flag = true;
+
+            if (val == ""){
+                alert("Vui lòng nhập dữ liệu");
+                flag = false;
+            }
+            return flag;
+        }
+
+        </script> 
+-->
+
+    <!-- Gọi đến hàm khi Submit -->
+
+        <!-- 
+            <script>
+            
+            function validate(){
+                 alert(1);
+            }
+        // Sử dung onload để khi đọc hết HTML rồi mới đọc nó
+            window.onload = function(){
+             // Cách 1: Thêm sự kiện mà không cân biết sự kiện cũ tn
+                document.getElementById("myform").addEventListener('submit', function(){
+                    alert(2);
+                });
+
+            // Cách 2; Sử dụng thuộc tính Submit
+                document.getElementById("myform").onsubmit = function(){
+                    alert(4);
+                };
+            // Khi sử dụng cách này các giá trị hàm bên trong onsubmit đã bị mất(Tạo ra cái mới đầu tiên)
+            };
+
+        </script>
+
+            <form action="" method="POST" id="myform" onsubmit="return validate()">
+                <input type="text" id="name" value="">
+                <input type="submit" name="" id="" value="Submit">   
+            </form> 
+        -->
+
+    <!-- Dùng js để Submit -->
+
+    <!-- Không dùng type Submit trong input mà thay bằng button -->
+
+        <script>
+
+            window.onload = function(){
+
+                document.getElementById('callSubmitform').addEventListener('click', function(){
+
+                    var val = document.getElementById('name').value;
+                    if (val == ""){
+                        alert("vui long nhập dữ liệu");
+                    }
+                    else {
+                        document.getElementById("myform").submit(); //Thực hiện submit
+                    }
+                });
+            };
+
+        </script>
+
+        <form action="" method="post" id="myform" >
+            <input type="text" id="name" value="">
+            <input type="button" value="Click me" id="callSubmitform">   
+        </form> 
+
+</body>
+
+</html>

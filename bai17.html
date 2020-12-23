@@ -1,0 +1,140 @@
+<!-- Bài 17: Thao tác với checkbox -->
+
+<!-- 
+    1. Thiết lập checked
+    2. Lấy giá trị checked
+    3. Bắt sự kiện checked / unchecked
+    4. Tạo check all và uncheck all
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+</head>
+
+<body>
+
+    <!-- Thiết lập checked -->
+    <!-- <input type="checkbox" name="fruite" value="Dừa" id="" /> Dừa <br>
+    <input type="checkbox" name="fruite" value="Chuối" id="" /> Chuối <br>
+    <input type="checkbox" name="fruite" value="Nhãn" id="" /> Nhãn <br>
+    <input type="checkbox" name="fruite" value="Cam" id="" /> Cam <br>
+
+    <input type="button" onclick="changeStatus()" name="clickme" value="Change">
+    
+    <script>
+
+        function changeStatus(){
+
+            var fruite = document.getElementsByName('fruite');
+
+            if (fruite[0].checked){
+                fruite[0].checked = false;
+            }
+            else {
+                fruite[0].checked =true;
+            }
+
+        }
+
+    </script> -->
+
+    <!-- Lấy giá trị checked -->
+<!-- 
+    <input type="checkbox" name="fruite" value="Dừa" id="" /> Dừa <br>
+    <input type="checkbox" name="fruite" value="Chuối" id="" /> Chuối <br>
+    <input type="checkbox" name="fruite" value="Nhãn" id="" /> Nhãn <br>
+    <input type="checkbox" name="fruite" value="Cam" id="" /> Cam <br>
+
+    <input type="button" onclick="changeStatus()" name="clickme" value="Click">
+    <p id="result"></p>
+
+    <script>
+
+        function changeStatus()
+        {
+            var fruite = document.getElementsByName('fruite');
+            var result = '';
+                for (var i = 0; i < fruite.length; i++)
+                {
+                    if (fruite[i].checked)
+                    {
+                        result += ',' + fruite[i].value;
+                    }
+
+                }
+            
+            document.getElementById('result').innerHTML = result;
+
+        }
+
+    </script> -->
+
+    <!-- Cách 3: Bắt sự kiện -->
+<!-- 
+    <input type="checkbox" name="fruite" value="Dừa" id="" /> Dừa <br>
+    <input type="checkbox" name="fruite" value="Chuối" id="" /> Chuối <br>
+    <input type="checkbox" name="fruite" value="Nhãn" id="" /> Nhãn <br>
+    <input type="checkbox" name="fruite" value="Cam" id="" /> Cam <br>
+
+    <input type="button" id="clickme" name="clickme" value="Click">
+
+    <script>
+
+        window.onload = function(){
+            var fruite = document.getElementsByName('fruite')
+
+            for (var i = 0; i < fruite.length; i++){
+                fruite[i].addEventListener('change', function(){
+                alert(1);
+            }
+            );
+            }
+
+        };
+
+    </script> -->
+
+    <!-- Cách 4 check all -->
+
+    <input type="checkbox" id="checkall" value="Check All" /> Check all <br>
+
+    <input type="checkbox" name="fruite" value="Dừa" id="" /> Dừa <br>
+    <input type="checkbox" name="fruite" value="Chuối" id="" /> Chuối <br>
+    <input type="checkbox" name="fruite" value="Nhãn" id="" /> Nhãn <br>
+    <input type="checkbox" name="fruite" value="Cam" id="" /> Cam <br>
+
+    <input type="button" id="clickme" name="clickme" value="Click">
+
+    <script>
+
+        window.onload = function(){
+            
+            document.getElementById('checkall').addEventListener('change', function(){
+
+            if (this.checked){
+
+                var fruite = document.getElementsByName('fruite');
+                for (var i = 0; i < fruite.length; i++){
+                    fruite[i].checked = true;
+                }
+            }
+            else {
+                var fruite = document.getElementsByName('fruite');
+                for (var i = 0; i < fruite.length; i++){
+                    fruite[i].checked = false;
+                }
+            }
+
+            });
+
+        };
+
+</script>
+
+</body>
+
+</html>

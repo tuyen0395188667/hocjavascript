@@ -1,0 +1,37 @@
+<!-- Bai 19: Sử dụng thuộc tính HTML trong js -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc tính Html trong js</title>
+</head>
+
+<body style="margin: 100px;">
+    <!-- init-value: Khi người dùng trả lời sai sẽ trở về giá trị đó -->
+    <input type="text" onchange="validate(this)" name="product_nums" init-value="20" value="20"/>
+    
+    <script>
+
+        function validate(obj){
+            var value = parseInt(obj.value);
+
+            // Nếu nhập giá trị bé hơn 0
+            // thì thông báo lỗi và backup lại giá trị ban đầu
+            if (value < 0){
+                var init_value = obj.getAttribute('init-value');
+                obj.value = init_value;
+            }
+            else {
+                // Ngược lại nhập đúng thì 
+                // Cập nhật giá trị backup
+                obj.setAttribute('init-value', value);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

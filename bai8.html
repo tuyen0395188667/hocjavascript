@@ -1,0 +1,64 @@
+<!-- Bài 8: Vòng lặp while và do while -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: Vòng lặp while</title>
+    <script src="javascript8s.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+    // // condition: Điều kiện lặp
+    //     var i = 1;
+    //     while (i <= 10){
+    //         console.log(i);
+            
+    //         i++;
+    //     }
+
+    // // do làm gì đó trong khi điều kiện trong while true
+    //     var j = 1;
+    //     do {
+    //         console.log(j);
+
+    //         j++;
+    //     }
+    //     while (j <= 10);
+
+    var students = [
+        "Cuong",
+        "Tuyen",
+        "Tien"
+    ];
+
+    var i = 0;
+    while (i < students.length){
+        console.log(students[i]);
+        i++;
+    }
+
+    var j = 0;
+    do {
+        console.log(students[j]);
+        j++;
+    }
+    while (j < students.length)
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Sử dụng cho Điều kiện không biết trước số lần lặp -->
+<!-- Do while tối thiểu lặp 1 lần -->
+
+<!-- Lặp cho trường hợp biết trước Tổng số lần lặp -->
+<!-- Khi chạy vô tận trang web sẽ bị lỗi -->
+<!-- Vòng lặp lồng nhau: for = 1 sau khi sử dụng for(j) => Hiển thị 5 lần sau đó xuống dòng hiển thị 2 5 lần ... -->

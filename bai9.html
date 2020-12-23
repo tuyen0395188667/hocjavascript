@@ -1,0 +1,44 @@
+<!-- Bài 9: Object trong js -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9: Object trong js</title>
+    <script src="javascript9.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        var students = {
+            name : "Tuyen",
+            age : "22",
+            blog : "free",
+            showInfo : function(){
+                console.log(document.getElementById('test').textContent);
+            }
+        };
+
+    </script>
+
+        <p id="test">Hello world</p>
+
+    <script>
+
+        students.showInfo();
+        alert(students.name);
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- var students = new Object(); == var students = {};  -->
+
+
+

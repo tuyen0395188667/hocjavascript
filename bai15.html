@@ -1,0 +1,62 @@
+<!-- Bai15: Thay đổi thuộc tính CSS bằng js -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truy xuất thẻ</title>
+
+</head>
+
+<body>
+
+    <!-- Thay đổi thuộc tính của CSS -->
+        <div id="wrapper">
+            <div class="content">CONTENT 1</div>
+        </div>
+        <div class="content">CONTENT 2</div>
+        <div id="content3">CONTENT 3</div>
+        <div id="content4">CONTENT 4</div>
+        <br>
+        <input type="button" value="Đăng Nhập" id="button" onclick="do_something()"/> 
+
+    <script>
+        
+        function do_something()
+        {
+
+            // var contentObj = document.querySelectorAll('div#wrapper div.content');
+
+            var contentObj = document.getElementsByClassName('content');
+
+            for (var i = 0; i < contentObj.length; i++)
+            {
+                contentObj[i].style.background = 'red';
+                contentObj[i].style.color = 'white';
+            }
+
+        }
+
+    </script>
+
+    <!-- Thay đổi thuộc tính attreibute -->
+
+    <!-- <input type="text" name="demo" id="fullname" placeholder="Mail hoặc số điện thoại của bạn" />  <br>  
+    <input type="button" value="Đăng Nhập" id="button" onclick="do_something()"/>
+
+    <script>
+
+        function do_something(){
+           document.getElementById('fullname').value = 'radio';
+       }
+
+    </script> -->
+ 
+</body>
+
+</html>
+<!-- Đổi thuộc tính: Obj.attreibuteName = value -->
+<!-- Đổi style Css: Obj.style.cssName = value -->
